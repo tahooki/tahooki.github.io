@@ -563,6 +563,9 @@ figure.highlight {
   overflow-y: auto;
   margin: 1.5em 0;
 }
+figure.highlight ::webkit-scroll {
+  display: none;
+}
 figure.highlight figcaption {
   padding-top: 10px;
 }
