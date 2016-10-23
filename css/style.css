@@ -555,6 +555,9 @@ code {
   color: #a9b7c6;
   background: rgba(144,144,144,0.1);
 }
+figure.highlight::-webkit-scrollbar {
+  display: none;
+}
 figure.highlight {
   font-family: monospace;
   color: #a9b7c6;
@@ -562,9 +565,6 @@ figure.highlight {
   background: rgba(144,144,144,0.1);
   overflow-y: auto;
   margin: 1.5em 0;
-}
-figure.highlight ::webkit-scrollbar {
-  display: none;
 }
 figure.highlight figcaption {
   padding-top: 10px;
