@@ -551,9 +551,6 @@ footer.footer-content .footer-copyright {
   margin: 0 0 40px 0;
   font-size: 0.7em;
 }
-::webkit-scroll {
-  display: none;
-}
 code {
   color: #a9b7c6;
   background: rgba(144,144,144,0.1);
@@ -565,6 +562,9 @@ figure.highlight {
   background: rgba(144,144,144,0.1);
   overflow-y: auto;
   margin: 1.5em 0;
+}
+figure.highlight ::webkit-scrollbar {
+  display: none;
 }
 figure.highlight figcaption {
   padding-top: 10px;
