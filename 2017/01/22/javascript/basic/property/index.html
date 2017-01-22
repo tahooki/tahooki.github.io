@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="프로퍼티란?자바스크립트에서 변수는 기본적으로 객체 프로퍼티와 같다. (같은 말이다.)
+전역 객체란?자바스크립트 인터프리터가 실행됐을 때 가장 먼저 하는 일은 전역 객체를 생성하는 것이다.
+전역 변수란?전역으로 선언해두는 변수, 전역 자바스크립트 변수를 선언할 경우 실질">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="tahooki">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="프로퍼티와 변수, 객체"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Web Developer"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>프로퍼티와 변수, 객체 - Web Developer</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/posts">
+                    Posts
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">Web Developer</h1>
+        
+        
+            <h1 id="main-subtitle" class="subtitle">Tahooki</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+
+
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <span>
+                
+                    [ Javascript ]
+                
+                프로퍼티와 변수, 객체</span>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2017-01-22</span>
+            
+            
+                <span class="tags">
+                    <a href="/tags/Javascript/">Javascript</a> <a href="/tags/기초/">기초</a>
+                </span>
+            
+        </div>
+    </div>
+    <!-- 해당 내용이 있으면 아래꺼를 만든다.. 라는 식 -->
+
+
+
+    <div class="content">
+        
+        
+        
+
+        
+
+        
+
+        <!-- Gallery -->
+        
+
+        <br/><br/><br/>
+        <!-- Post Content -->
+        <h2 id="프로퍼티란"><a href="#프로퍼티란" class="headerlink" title="프로퍼티란?"></a>프로퍼티란?</h2><p>자바스크립트에서 변수는 기본적으로 객체 프로퍼티와 같다. (같은 말이다.)</p>
+<h2 id="전역-객체란"><a href="#전역-객체란" class="headerlink" title="전역 객체란?"></a>전역 객체란?</h2><p>자바스크립트 인터프리터가 실행됐을 때 가장 먼저 하는 일은 전역 객체를 생성하는 것이다.</p>
+<h2 id="전역-변수란"><a href="#전역-변수란" class="headerlink" title="전역 변수란?"></a>전역 변수란?</h2><p>전역으로 선언해두는 변수, 전역 자바스크립트 변수를 선언할 경우 실질적으로 전역 객체의 프로퍼티를 정의하는 것이다.</p>
+<h2 id="Window-객체"><a href="#Window-객체" class="headerlink" title="Window 객체"></a>Window 객체</h2><p>자바스크립트에서 Window 객체는 브라우저 창에 담긴 모든 자바스크립트 코드를 위한 전역 객체의 역할을 한다. 이 전역 Window 객체에는 전역 객체를 참조할 때 this 대신 사용할 수 있는 자가 참조(self-referential) window 프로퍼티가 포함돼 있다.</p>
+<p></p><p><br>Window 객체에는 parseInt와 Math 같은 핵심적인 전역 프로퍼티를 비롯해 navigator와 screen과 같은 전역 클라이언트 측 프로퍼티가 정의돼 있다.</p>
+<p></p><p><br>전역 객체와 변수를 사용하는 예제는 다음과 같다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> number1 = <span class="string">"111"</span>;</div><div class="line"><span class="built_in">console</span>.log(number1);       <span class="comment">// 111, 전역 객체의 프로퍼티에 접근</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.number1);  <span class="comment">// 111, 'this'를 사용해 전역 객체를 참조</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.number1);<span class="comment">// 111, 'window'를 사용해 전역 객체를 참조</span></div></pre></td></tr></table></figure></p>
+<h2 id="지역변수란"><a href="#지역변수란" class="headerlink" title="지역변수란?"></a>지역변수란?</h2><p>함수 안에서 정의되는 지역 변수도 객체의 프로퍼티에 해당한다. 이 객체를 호출 객체(call object)라 하는데, 함수의 본문이 실행되는 동안 함수 인자와 지역 변수가 이 호출 객체의 프로퍼티로 저장된다. 지역 변수는 전역 변수와 이름이 같을 수 있지만 각기 별도의 객체에 저장된다.</p>
+<p></p><p><br>지역 변수를 사용하는 예제는 다음과 같다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">x = <span class="number">5</span>;          <span class="comment">// 전역 변수</span></div><div class="line">y = <span class="number">5</span>;          <span class="comment">// 전역 변수</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">y</span>)</span>&#123;      <span class="comment">// 인자 'y'는 호출 객체의 프로퍼티로 저장됨</span></div><div class="line">    <span class="keyword">var</span> x = <span class="number">15</span>;     <span class="comment">// 지역 변수</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"local variable x = "</span>+ x);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"local variable y = "</span>+ y);</div><div class="line">&#125;</div><div class="line">f(<span class="number">15</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"local global x = "</span>+ x);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"local global y = "</span>+ y);</div></pre></td></tr></table></figure></p>
+<p>위 코드를 실행한 결과는 다음과 같다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">local variable x = <span class="number">15</span></div><div class="line">local variable y = <span class="number">15</span></div><div class="line">local global x = <span class="number">5</span></div><div class="line">local global y = <span class="number">5</span></div></pre></td></tr></table></figure></p>
+<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><ul>
+<li><a href="http://codingnuri.com/javascript-tutorial/javascript-variables-as-properties.html" target="_blank" rel="external">http://codingnuri.com/javascript-tutorial/javascript-variables-as-properties.html</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer-about">
+                <h2>About</h2>
+                <p>
+                    This blog is GitBlog made from <a href="https://hexo.io/">Hexo</a>.<br/> This theme was developed by <a href="https://github.com/klugjo">Jonathan Klughertz</a>. <br/><br/><a href="https://github.com/klugjo/hexo-theme-alpha-dust">(Original Theme)</a>　<a href="#">(Customizaion Theme)</a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/tahooki">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:tahooki@naver.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Web Developer Tahooki. <a href="http://tahooki.me/">http://tahooki.me</a>
+                    <div>
+                        <span id="busuanzi_container_site_pv">
+                            Total <span id="busuanzi_value_site_pv"></span> views,
+                        </span>
+                        <span id="busuanzi_container_site_uv">
+                          <span id="busuanzi_value_site_uv"></span> visitors
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Total visitor count-->
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
