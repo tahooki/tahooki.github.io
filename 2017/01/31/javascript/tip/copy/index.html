@@ -10,6 +10,11 @@
 
     <!--Description-->
     
+        <meta name="description" content="객체와 Array 복사하기자바스크립트에서 객체나 배열을 다른 변수에 할당하면, 당연히 레퍼런스 참조로 복사된다.종종 다른 작업을 위해 값만 복사가 필요해질 때가 있는데, 그때에는 아래와 같은 방법을 사용한다.
+
+
+객체 복사하기Object를 이용해서 복사하는 방법123v">
+    
 
     <!--Author-->
     
@@ -18,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Web Developer"/>
+        <meta property="og:title" content="Tip - 객체와 Array 복사하기"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +34,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +45,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2017 - Web Developer</title>
+    <title>Tip - 객체와 Array 복사하기 - Web Developer</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -119,8 +124,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -128,200 +132,78 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">Posts (11)</h1>
+            <h1 id="main-title" class="title">Web Developer</h1>
         
+        
+            <h1 id="main-subtitle" class="subtitle">Tahooki</h1>
         
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/2017/02/01/javascript/meteor/collection/">
-        <span class="archive-date">
+
+
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <span>
+                
+                    [ Javascript ]
+                
+                Tip - 객체와 Array 복사하기</span>
+        </h1>
+        <div class="post-info">
             
-                Meteor
+                <span class="date">2017-01-31</span>
             
-        </span>
-        <span class="archive-title">
-            컬렉션이라는 것에 대해 알아보자.
-        </span>
-    </a>
+            
+                <span class="tags">
+                    <a href="/tags/Javascript/">Javascript</a> <a href="/tags/tip/">tip</a>
+                </span>
+            
+        </div>
+    </div>
+    <!-- 해당 내용이 있으면 아래꺼를 만든다.. 라는 식 -->
+
+
+
+    <div class="content">
+        
+        
+        
+
+        
+
+        
+
+        <!-- Gallery -->
+        
+
+        <br/><br/><br/>
+        <!-- Post Content -->
+        <h2 id="객체와-Array-복사하기"><a href="#객체와-Array-복사하기" class="headerlink" title="객체와 Array 복사하기"></a>객체와 Array 복사하기</h2><p>자바스크립트에서 객체나 배열을 다른 변수에 할당하면, 당연히 레퍼런스 참조로 복사된다.<br>종종 다른 작업을 위해 값만 복사가 필요해질 때가 있는데, 그때에는 아래와 같은 방법을 사용한다.</p>
+<p><br></p>
+<p><br></p>
+<h4 id="객체-복사하기"><a href="#객체-복사하기" class="headerlink" title="객체 복사하기"></a>객체 복사하기</h4><p>Object를 이용해서 복사하는 방법<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> aaa = &#123;<span class="attr">a</span>:<span class="number">2</span>,<span class="attr">b</span>:<span class="number">4</span>&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> bbb = <span class="built_in">Object</span>.assign(&#123;&#125;,aaa);</div></pre></td></tr></table></figure></p>
+<p>JSON을 이용해서 복사하는 방법<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> aaa = &#123;<span class="attr">a</span>:<span class="number">2</span>,<span class="attr">b</span>:<span class="number">4</span>&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> bbb = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(aaa));</div></pre></td></tr></table></figure></p>
+<p><br></p>
+<h4 id="Array-복사하기"><a href="#Array-복사하기" class="headerlink" title="Array 복사하기"></a>Array 복사하기</h4><p>Array도 객체와 마찬가지로 JSON으로 복사를 할 수 있다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> aaa = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> bbb = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(aaa));</div></pre></td></tr></table></figure></p>
+<p>그런데 이 방식으로 복사를 할 경우, indexOf나 contains같은 메서드로는 객체 검색이 되지 않는다. 이유는 당연히 배열 안에 객체들의 주소값이 다르기 때문이다.<br>이런 떄에는 어쩔 수 없이 slice() 등을 사용해서 shallow copy를 할 수 밖에 없다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> aaa = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> bbb = aaa.slice();</div></pre></td></tr></table></figure></p>
+
+
+        
+    </div>
+
+    <!-- Comments -->
+    
+
 </div>
-
-
-
-            
-                <div class="archive-post">
-    <a href="/2017/01/31/javascript/tip/copy/">
-        <span class="archive-date">
-            
-                Javascript
-            
-        </span>
-        <span class="archive-title">
-            Tip - 객체와 Array 복사하기
-        </span>
-    </a>
-</div>
-
-
-
-            
-                <div class="archive-post">
-    <a href="/2017/01/31/javascript/ec6/iterator_for-of/">
-        <span class="archive-date">
-            
-                ES6
-            
-        </span>
-        <span class="archive-title">
-            이터레이터(iterator)와 for-of 루프 구문
-        </span>
-    </a>
-</div>
-
-
-
-            
-                <div class="archive-post">
-    <a href="/2017/01/30/javascript/ec6/start/">
-        <span class="archive-date">
-            
-                ES6
-            
-        </span>
-        <span class="archive-title">
-            ECMAScript 6란?
-        </span>
-    </a>
-</div>
-
-
-
-            
-                <div class="archive-post">
-    <a href="/2017/01/22/javascript/basic/referencesite/">
-        <span class="archive-date">
-            
-                Javascript
-            
-        </span>
-        <span class="archive-title">
-            참고하면 좋은 사이트
-        </span>
-    </a>
-</div>
-
-
-
-            
-                <div class="archive-post">
-    <a href="/2017/01/22/javascript/basic/prototype/">
-        <span class="archive-date">
-            
-                Javascript
-            
-        </span>
-        <span class="archive-title">
-            프로토타입이란?
-        </span>
-    </a>
-</div>
-
-
-
-            
-                <div class="archive-post">
-    <a href="/2017/01/22/javascript/basic/property/">
-        <span class="archive-date">
-            
-                Javascript
-            
-        </span>
-        <span class="archive-title">
-            프로퍼티와 변수, 객체
-        </span>
-    </a>
-</div>
-
-
-
-            
-                <div class="archive-post">
-    <a href="/2017/01/19/javascript/basic/checkType/">
-        <span class="archive-date">
-            
-                Javascript
-            
-        </span>
-        <span class="archive-title">
-            자료형 검사하기
-        </span>
-    </a>
-</div>
-
-
-
-            
-                <div class="archive-post">
-    <a href="/2017/01/19/javascript/basic/birth/">
-        <span class="archive-date">
-            
-                Javascript
-            
-        </span>
-        <span class="archive-title">
-            자바스크립트의 탄생
-        </span>
-    </a>
-</div>
-
-
-
-            
-                <div class="archive-post">
-    <a href="/2017/01/18/javascript/basic/type/">
-        <span class="archive-date">
-            
-                Javascript
-            
-        </span>
-        <span class="archive-title">
-            타입, 값, 변수 기초 정리
-        </span>
-    </a>
-</div>
-
-
-
-            
-                <div class="archive-post">
-    <a href="/2017/01/18/javascript/basic/whatis/">
-        <span class="archive-date">
-            
-                Javascript
-            
-        </span>
-        <span class="archive-title">
-            자바스크립트 란?
-        </span>
-    </a>
-</div>
-
-
-
-            
         </section>
+
     </div>
 </div>
-
-
-
-
-
-
-
 
 </div>
 
