@@ -105,6 +105,15 @@ a:hover {
     height: 60px;
   }
 }
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
 header {
   padding-top: 100px;
 }
@@ -156,6 +165,7 @@ section.main .post {
 section.main .post .post-header {
   position: relative;
   width: 100%;
+  padding: 0px 10px;
 }
 section.main .post .post-header:before {
   position: absolute;
@@ -432,8 +442,8 @@ section.main .post .content .pullquote.left {
   float: left;
 }
 section.main .post .content img {
-  display: block;
-  margin: 0 auto;
+/*display block*/
+  max-width: 100%;
 }
 section.main .post .content .video-container {
   position: relative;
