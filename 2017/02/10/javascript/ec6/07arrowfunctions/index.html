@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="hacks 웹 기술블로그에 작성된 내용을 정리한 포스트입니다.http://hacks.mozilla.or.kr/2015/09/es6-in-depth-arrow-functions/
+
+
+
+
+화살표 함수(Arrow functions)
+—&amp;gt;
+이 화살표는 오직 라인 맨 앞에">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="tahooki">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="화살표 함수(Arrow Function)"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Web Developer"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>화살표 함수(Arrow Function) - Web Developer</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/posts">
+                    Posts
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">Web Developer</h1>
+        
+        
+            <h1 id="main-subtitle" class="subtitle">Tahooki</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+
+
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <span>
+                
+                    [ ES6 ]
+                
+                화살표 함수(Arrow Function)</span>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2017-02-10</span>
+            
+            
+                <span class="tags">
+                    <a href="/tags/Javascript/">Javascript</a> <a href="/tags/정리/">정리</a> <a href="/tags/ES6/">ES6</a> <a href="/tags/ECMAScript/">ECMAScript</a>
+                </span>
+            
+        </div>
+    </div>
+    <!-- 해당 내용이 있으면 아래꺼를 만든다.. 라는 식 -->
+
+
+
+    <div class="content">
+        
+        
+        
+
+        
+
+        
+
+        <!-- Gallery -->
+        
+
+        <br/><br/><br/>
+        <!-- Post Content -->
+        <div class="text-center"><br><img src="/img/hacks.png" alt=""><br></div>
+
+<div class="text-center"><br>hacks 웹 기술블로그에 작성된 내용을 정리한 포스트입니다.<br><a href="http://hacks.mozilla.or.kr/2015/09/es6-in-depth-arrow-functions/" target="_blank" rel="external">http://hacks.mozilla.or.kr/2015/09/es6-in-depth-arrow-functions/</a><br></div>
+
+<p><br></p>
+<p><br></p>
+<hr>
+<h2 id="화살표-함수-Arrow-functions"><a href="#화살표-함수-Arrow-functions" class="headerlink" title="화살표 함수(Arrow functions)"></a>화살표 함수(Arrow functions)</h2><ul>
+<li>—&gt;</li>
+<li>이 화살표는 오직 라인 맨 앞에 있을 때만 주석문으로 처리 </li>
+<li><p>기호가 JS 코드 중간에 있을 때는 “goes to” 연산자로 처리</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">countdown</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">    <span class="keyword">while</span> (n --&gt; <span class="number">0</span>)  <span class="comment">// "n goes to zero"</span></div><div class="line">        alert(n);</div><div class="line">    blastoff();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>n값이 0이 될때까지 루프</li>
+</ul>
+</li>
+<li><p>=&gt; (화살표 함수)</p>
+<ul>
+<li><p>javascript의 장황한 람다문법을 해결한것</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> selected = allJobs.filter(<span class="function"><span class="keyword">function</span> (<span class="params">job</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> job.isSelected();</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">var</span> selected = allJobs.filter(<span class="function"><span class="params">job</span> =&gt;</span> job.isSelected());</div></pre></td></tr></table></figure>
+</li>
+<li><p>여러개의 인자, rest 파라메터, 디폴트 파라메터, 디스트럭처링 인자를 표현 할 때는 인자 리스트를 괄호로 묶어 준다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> total = values.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</div><div class="line"> <span class="keyword">return</span> a + b;</div><div class="line">&#125;, <span class="number">0</span>);</div><div class="line"></div><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="keyword">var</span> total = values.reduce(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b, <span class="number">0</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>실행구문</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line">$(<span class="string">"#confetti-btn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">    playTrumpet();</div><div class="line">    fireConfettiCannon();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li><p>이것이</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">$(<span class="string">"#confetti-btn"</span>).click(<span class="function"><span class="params">event</span> =&gt;</span> &#123;</div><div class="line">    playTrumpet();</div><div class="line">    fireConfettiCannon();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>이것으로…</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>객체를 리턴할때는 () 로 묶어줘야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 각 강아지(puppy)가 가지고 놀 비어있는 객체 만들기</span></div><div class="line"><span class="keyword">var</span> chewToys = puppies.map(<span class="function"><span class="params">puppy</span> =&gt;</span> &#123;&#125;);   <span class="comment">// BUG!</span></div><div class="line"><span class="keyword">var</span> chewToys = puppies.map(<span class="function"><span class="params">puppy</span> =&gt;</span> (&#123;&#125;)); <span class="comment">// ok</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>this 사용?</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    ...</div><div class="line">    addAll: <span class="function"><span class="keyword">function</span> <span class="title">addAll</span>(<span class="params">pieces</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> self = <span class="keyword">this</span>;</div><div class="line">        _.each(pieces, <span class="function"><span class="keyword">function</span> (<span class="params">piece</span>) </span>&#123;</div><div class="line">            self.add(piece);</div><div class="line">        &#125;);</div><div class="line">    &#125;,</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>해당 꼼수 사용불가.<ul>
+<li>self 값은 window 또는 undefined</li>
+</ul>
+</li>
+<li>해결방안<ul>
+<li>object.method() 문법을 통해 호출하는 메소드는 화살표 함수가 아닌 일반 함수 사용</li>
+<li>또는</li>
+<li>화살표 함수 사용<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">&#123;</div><div class="line">    ...</div><div class="line">    addAll: <span class="function"><span class="keyword">function</span> <span class="title">addAll</span>(<span class="params">pieces</span>) </span>&#123;</div><div class="line">        _.each(pieces, piece =&gt; <span class="keyword">this</span>.add(piece));</div><div class="line">    &#125;,</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>λ-calculus</p>
+<ul>
+<li>이게 뭡니까?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>ES6에 바뀐 메소드 표기법</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">&#123;</div><div class="line">    ...</div><div class="line">    addAll: <span class="function"><span class="keyword">function</span> <span class="title">addAll</span>(<span class="params">pieces</span>) </span>&#123;</div><div class="line">        _.each(pieces, piece =&gt; <span class="keyword">this</span>.add(piece));</div><div class="line">    &#125;,</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>에서</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6 with method syntax</span></div><div class="line">&#123;</div><div class="line">    ...</div><div class="line">    addAll(pieces) &#123;</div><div class="line">        _.each(pieces, piece =&gt; <span class="keyword">this</span>.add(piece));</div><div class="line">    &#125;,</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>addAll : function addAll(…) 대신 addAll(…) 사용하면됨.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+        
+    </div>
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer-about">
+                <h2>About</h2>
+                <p>
+                    This blog is GitBlog made from <a href="https://hexo.io/">Hexo</a>.<br/> This theme was developed by <a href="https://github.com/klugjo">Jonathan Klughertz</a>. <br/><br/>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/tahooki">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:tahooki@naver.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Web Developer Tahooki.
+                    <div>
+                        <span id="busuanzi_container_site_pv">
+                            Total <span id="busuanzi_value_site_pv"></span> views,
+                        </span>
+                        <span id="busuanzi_container_site_uv">
+                          <span id="busuanzi_value_site_uv"></span> visitors
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Total visitor count-->
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
