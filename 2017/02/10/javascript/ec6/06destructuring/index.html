@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="hacks 웹 기술블로그에 작성된 내용을 정리한 포스트입니다.http://hacks.mozilla.or.kr/2015/09/es6-in-depth-destructuring/
+
+
+
+
+디스트럭처링(destructuring) 할당
+배열의 요소나 객체의 속성을 배열 리터럴(l">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="tahooki">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="디스트럭처링(Destructuring)"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Web Developer"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>디스트럭처링(Destructuring) - Web Developer</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/posts">
+                    Posts
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">Web Developer</h1>
+        
+        
+            <h1 id="main-subtitle" class="subtitle">Tahooki</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+
+
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <span>
+                
+                    [ ES6 ]
+                
+                디스트럭처링(Destructuring)</span>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2017-02-10</span>
+            
+            
+                <span class="tags">
+                    <a href="/tags/Javascript/">Javascript</a> <a href="/tags/ES6/">ES6</a> <a href="/tags/ECMAScript/">ECMAScript</a> <a href="/tags/정리/">정리</a>
+                </span>
+            
+        </div>
+    </div>
+    <!-- 해당 내용이 있으면 아래꺼를 만든다.. 라는 식 -->
+
+
+
+    <div class="content">
+        
+        
+        
+
+        
+
+        
+
+        <!-- Gallery -->
+        
+
+        <br/><br/><br/>
+        <!-- Post Content -->
+        <div class="text-center"><br><img src="/img/hacks.png" alt=""><br></div>
+
+<div class="text-center"><br>hacks 웹 기술블로그에 작성된 내용을 정리한 포스트입니다.<br><a href="http://hacks.mozilla.or.kr/2015/09/es6-in-depth-destructuring/" target="_blank" rel="external">http://hacks.mozilla.or.kr/2015/09/es6-in-depth-destructuring/</a><br></div>
+
+<p><br></p>
+<p><br></p>
+<hr>
+<h2 id="디스트럭처링-destructuring-할당"><a href="#디스트럭처링-destructuring-할당" class="headerlink" title="디스트럭처링(destructuring) 할당"></a>디스트럭처링(destructuring) 할당</h2><ul>
+<li>배열의 요소나 객체의 속성을 배열 리터럴(literal)이나 객체 리터럴과 비슷한 문법을 이용해서 변수에 할당하는 것</li>
+<li><p>원리</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> first = someArray[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> second = someArray[<span class="number">1</span>];</div><div class="line"><span class="keyword">var</span> third = someArray[<span class="number">2</span>];</div></pre></td></tr></table></figure>
+<ul>
+<li><p>이것을</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> [first, second, third] = someArray;</div></pre></td></tr></table></figure>
+<ul>
+<li>이렇게 함.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>사용방법</p>
+<ul>
+<li><p>형식</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> [first, second, third] = someArray;</div></pre></td></tr></table></figure>
+</li>
+<li><p>일반형</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> [ variable1, variable2, ..., variableN ] = array;</div><div class="line"><span class="keyword">let</span> [ variable1, variable2, ..., variableN ] = array;</div><div class="line"><span class="keyword">const</span> [ variable1, variable2, ..., variableN ] = array;</div></pre></td></tr></table></figure>
+</li>
+<li><p>중첩형</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> [foo, [[bar], baz]] = [<span class="number">1</span>, [[<span class="number">2</span>], <span class="number">3</span>]];</div><div class="line"><span class="built_in">console</span>.log(foo);</div><div class="line"><span class="comment">// 1</span></div><div class="line"><span class="built_in">console</span>.log(bar);</div><div class="line"><span class="comment">// 2</span></div><div class="line"><span class="built_in">console</span>.log(baz);</div><div class="line"><span class="comment">// 3</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>건너뛰기형</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> [,,third] = [<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>];</div><div class="line"><span class="built_in">console</span>.log(third);</div><div class="line"><span class="comment">// “baz"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>레스트형</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> [head, ...tail] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</div><div class="line"><span class="built_in">console</span>.log(tail);</div><div class="line"><span class="comment">// [2, 3, 4]</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>이터러블형</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fibs</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">0</span>;</div><div class="line">    <span class="keyword">var</span> b = <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</div><div class="line">        <span class="keyword">yield</span> a;</div><div class="line">        [a, b] = [b, a + b];</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> [first, second, third, fourth, fifth, sixth] = fibs();</div><div class="line"><span class="built_in">console</span>.log(sixth);</div><div class="line"><span class="comment">// 5</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>객체형</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> robotA = &#123; <span class="attr">name</span>: <span class="string">"Bender"</span> &#125;;</div><div class="line"><span class="keyword">var</span> robotB = &#123; <span class="attr">name</span>: <span class="string">"Flexo"</span> &#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> &#123; <span class="attr">name</span>: nameA &#125; = robotA;</div><div class="line"><span class="keyword">var</span> &#123; <span class="attr">name</span>: nameB &#125; = robotB;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(nameA);</div><div class="line"><span class="comment">// "Bender"</span></div><div class="line"><span class="built_in">console</span>.log(nameB);</div><div class="line"><span class="comment">// "Flexo"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>객체 중첩형</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> complicatedObj = &#123;</div><div class="line">    <span class="attr">arrayProp</span>: [</div><div class="line">        <span class="string">"Zapp"</span>,</div><div class="line">    &#123; <span class="attr">second</span>: <span class="string">"Brannigan"</span> &#125;</div><div class="line">  ]</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> &#123; <span class="attr">arrayProp</span>: [first, &#123; second &#125;] &#125; = complicatedObj;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(first);</div><div class="line"><span class="comment">// "Zapp"</span></div><div class="line"><span class="built_in">console</span>.log(second);</div><div class="line"><span class="comment">// "Brannigan"</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>존재 하지 않는 배열요소, 객체속성 등 접근시 undefined</p>
+</li>
+<li><p>디폴트 값 지정 가능</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> [missing = <span class="literal">true</span>] = [];</div><div class="line"><span class="built_in">console</span>.log(missing);</div><div class="line"><span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> &#123; <span class="attr">message</span>: msg = <span class="string">"Something went wrong"</span> &#125; = &#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(msg);</div><div class="line"><span class="comment">// "Something went wrong"</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> &#123; x = <span class="number">3</span> &#125; = &#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(x);</div><div class="line"><span class="comment">// 3</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>응용 사례</p>
+<ul>
+<li><p>함수의 인자 정의</p>
+<ul>
+<li>파라메터 순서 기억하지 않고 받을 수 있게함<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeBreakpoint</span>(<span class="params">&#123; url, line, column &#125;</span>) </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>설정 객체의 파라메터</p>
+<ul>
+<li>설정값을 받는 부분을 default 값을 설정해 둘 수 있다.<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">jQuery.ajax = <span class="function"><span class="keyword">function</span> (<span class="params">url, &#123;</span></span></div><div class="line">    async = true,</div><div class="line">    beforeSend = noop,</div><div class="line">    cache = true,</div><div class="line">    complete = noop,</div><div class="line">    crossDomain = false,</div><div class="line">    global = true,</div><div class="line">    <span class="regexp">//</span> ... more config</div><div class="line">&#125;) &#123;</div><div class="line">    <span class="comment">// ... do stuff</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>ES6 이터레이션 프로토콜과 함께</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line">map.set(<span class="built_in">window</span>, <span class="string">"the global"</span>);</div><div class="line">map.set(<span class="built_in">document</span>, <span class="string">"the document"</span>);</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> [key, value] <span class="keyword">of</span> map) &#123;</div><div class="line">  <span class="built_in">console</span>.log(key + <span class="string">" is "</span> + value);</div><div class="line">&#125;</div><div class="line"><span class="comment">// "[object Window] is the global"</span></div><div class="line"><span class="comment">// "[object HTMLDocument] is the document"</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p>키만 받기</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> [key] <span class="keyword">of</span> map) &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>값만 받기</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> [,value] <span class="keyword">of</span> map) &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>여러개의 값을 리턴하기</p>
+<ol>
+<li><p>변수로 받기</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">returnMultipleValues</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> [<span class="number">1</span>, <span class="number">2</span>];</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> [foo, bar] = returnMultipleValues();</div></pre></td></tr></table></figure>
+</li>
+<li><p>객체 컨테이너로 받기</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">returnMultipleValues</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">foo</span>: <span class="number">1</span>,</div><div class="line">        <span class="attr">bar</span>: <span class="number">2</span></div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> &#123; foo, bar &#125; = returnMultipleValues();</div></pre></td></tr></table></figure>
+</li>
+<li><p>continuation passing style</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">returnMultipleValues</span>(<span class="params">k</span>) </span>&#123;</div><div class="line">  k(<span class="number">1</span>, <span class="number">2</span>);</div><div class="line">&#125;</div><div class="line">returnMultipleValues(<span class="function">(<span class="params">foo, bar</span>) =&gt;</span> ...);</div></pre></td></tr></table></figure>
+<ul>
+<li>이게뭐지…</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>CommonJS 모듈로부터 이름(NAME) 가져오기<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> &#123; SourceMapConsumer, SourceNode &#125; = <span class="built_in">require</span>(<span class="string">"source-map"</span>);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+
+        
+    </div>
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer-about">
+                <h2>About</h2>
+                <p>
+                    This blog is GitBlog made from <a href="https://hexo.io/">Hexo</a>.<br/> This theme was developed by <a href="https://github.com/klugjo">Jonathan Klughertz</a>. <br/><br/>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/tahooki">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:tahooki@naver.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Web Developer Tahooki.
+                    <div>
+                        <span id="busuanzi_container_site_pv">
+                            Total <span id="busuanzi_value_site_pv"></span> views,
+                        </span>
+                        <span id="busuanzi_container_site_uv">
+                          <span id="busuanzi_value_site_uv"></span> visitors
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Total visitor count-->
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
