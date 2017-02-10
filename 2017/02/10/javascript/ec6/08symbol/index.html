@@ -243,23 +243,34 @@ Boo">
 </li>
 </ul>
 </li>
-<li><p>어떻게 사용?<br>  1.</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mySymbol = <span class="built_in">Symbol</span>();</div></pre></td></tr></table></figure>
-<pre><code>* 심볼 값을 생성해서 받는다.
-* 이 값은 어떠한 값과도 다르다.
-* 속성의 키로 사용할 수 있다.
-* 속성이 심볼을 키로 받으면 다른 속성과 충돌되지 않을 것을 보장 받는다.
-</code></pre><p>  2.</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 고유한 심볼을 생성</span></div><div class="line"><span class="keyword">var</span> isMoving = <span class="built_in">Symbol</span>(<span class="string">"isMoving"</span>);</div></pre></td></tr></table></figure>
-<pre><code>* 주석을 달아 놓은 심볼.
-    * 디버깅할때 유용하다.
-        * .toString() 함수를 써서 심볼값을 문자열로 바꿀때
-        * 에러메세지를 참조할 때
-        * cosnole.log()로 찍을 때
-</code></pre><ol>
+<li><p>어떻게 사용?</p>
+<ul>
+<li><p>기본적인 방법</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mySymbol = <span class="built_in">Symbol</span>();</div></pre></td></tr></table></figure>
+<ul>
+<li>심볼 값을 생성해서 받는다.</li>
+<li>이 값은 어떠한 값과도 다르다.</li>
+<li>속성의 키로 사용할 수 있다.</li>
+<li>속성이 심볼을 키로 받으면 다른 속성과 충돌되지 않을 것을 보장 받는다.</li>
+</ul>
+</li>
+<li><p>고유 심볼 생성</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 고유한 심볼을 생성</span></div><div class="line"><span class="keyword">var</span> isMoving = <span class="built_in">Symbol</span>(<span class="string">"isMoving"</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>주석을 달아 놓은 심볼.<ul>
+<li>디버깅할때 유용하다.<ul>
+<li>.toString() 함수를 써서 심볼값을 문자열로 바꿀때</li>
+<li>에러메세지를 참조할 때</li>
+<li>cosnole.log()로 찍을 때</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>if (isMoving in element)처럼 속성을 참조</li>
 <li>element[isMoving]처럼 속성을 제거하는 것도 가능</li>
-</ol>
+</ul>
 </li>
 <li>심볼을 간단한 캡슐화(encapsulation) 매카니즘으로 사용할 수 있다.<ul>
 <li>모듈이 스스로 심볼을 만드는 경우 해당 모듈은 해당 심볼을 모든 객체에 적용할 수 있다.<ul>
