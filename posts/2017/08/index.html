@@ -10,15 +10,6 @@
 
     <!--Description-->
     
-        <meta name="description" content="이 내용은 discovermeteor.com의 내용을 정리한것 입니다.http://kr.discovermeteor.com/chapters/collections/
-
-
-
-컬렉션이란?
-컬렉션은 데이터 구조체다
-컬렉션은 어떤 앱에서나 중심적인 역할을 한다.
-컬렉션은 데이터 입">
-    
 
     <!--Author-->
     
@@ -27,7 +18,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="컬렉션이라는 것에 대해 알아보자."/>
+        <meta property="og:title" content="Web Developer"/>
     
 
     <!--Open Graph Description-->
@@ -38,7 +29,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
     
 
     <!--Page Cover-->
@@ -49,7 +40,7 @@
 
     <!-- Title -->
     
-    <title>컬렉션이라는 것에 대해 알아보자. - Web Developer</title>
+    <title>Archives: 2017/8 - Web Developer</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -128,7 +119,8 @@
 <div class="container">
 
     <!-- Main Content -->
-    <div class="row">
+    
+<div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -136,108 +128,40 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">Web Developer</h1>
+            <h1 id="main-title" class="title">Posts (18)</h1>
         
-        
-            <h1 id="main-subtitle" class="subtitle">Tahooki</h1>
         
     </div>
 </header>
 
-        <section class="main">
+        <section class="main archive-container">
             
-
-
-<div class="post">
-
-    <div class="post-header">
-        <h1 class="title">
-            <span>
-                
-                    [ Meteor ]
-                
-                컬렉션이라는 것에 대해 알아보자.</span>
-        </h1>
-        <div class="post-info">
-            <!-- 
-                <span class="date">2017-02-02</span>
-             -->
+                <div class="archive-post">
+    <a href="/2017/08/08/javascript/ec6/10Collections/">
+        <span class="archive-date">
             
-                <span class="tags">
-                    <a href="/tags/정리/">정리</a> <a href="/tags/Meteor/">Meteor</a> <a href="/tags/미티어/">미티어</a>
-                </span>
+                ES6
             
-        </div>
-    </div>
-    <!-- 해당 내용이 있으면 아래꺼를 만든다.. 라는 식 -->
-
-
-
-    <div class="content">
-        
-        
-        
-
-        
-
-        
-
-        <!-- Gallery -->
-        
-
-        <br/><br/><br/>
-        <!-- Post Content -->
-        <div class="text-center"><br>이 내용은 discovermeteor.com의 내용을 정리한것 입니다.<br><a href="http://kr.discovermeteor.com/chapters/collections/" target="_blank" rel="external">http://kr.discovermeteor.com/chapters/collections/</a><br></div>
-
-<p><br></p>
-<hr>
-<h2 id="컬렉션이란"><a href="#컬렉션이란" class="headerlink" title="컬렉션이란?"></a>컬렉션이란?</h2><ul>
-<li>컬렉션은 데이터 구조체다</li>
-<li>컬렉션은 어떤 앱에서나 중심적인 역할을 한다.</li>
-<li>컬렉션은 데이터 입출력을 처리한다.</li>
-<li>컬렉션은 앱 전체에 사용되므로 var키워드를 사용하지 않는다.</li>
-<li>컬렉션은 여러 저장소에 저장될 수 있다.</li>
-<li>컬렉션은 양쪽 코드에서 실행된다.</li>
-<li>컬렉션은 서버에서  몽고디비와 연결되어 데이터 입출력한다.</li>
-<li>컬렉션은 클라이언트에서 서버의 데이터를 일부분 복제해서 가지고 있는 것.</li>
-</ul>
-<h2 id="WebApp의-데이터-저장"><a href="#WebApp의-데이터-저장" class="headerlink" title="WebApp의 데이터 저장"></a>WebApp의 데이터 저장</h2><ul>
-<li>브라우저 메모리 : 메모리상에 저장하는 것</li>
-<li>브라우저 저장소 : 브라우저 로컬 스토리지</li>
-<li>서버 데이터베이스 : 몽고디비<ul>
-<li>컬렉션은 이 3가지에 모두 저장될 수 있다.</li>
-</ul>
-</li>
-</ul>
-<h2 id="클라이언트-서버-통신-실습"><a href="#클라이언트-서버-통신-실습" class="headerlink" title="클라이언트-서버 통신(실습)"></a>클라이언트-서버 통신(실습)</h2><ul>
-<li>핵심은 동일한 컬렉션간의 동기화<ul>
-<li>미티어가 해준다.</li>
-</ul>
-</li>
-<li>서버에서의 컬렉션<ul>
-<li>컬렉션은 MongoDB로의 API로 기능한다.</li>
-<li>컬렉션은 MongoDB의 API다.</li>
-</ul>
-</li>
-<li>클라이언트에서의 컬렉션<ul>
-<li>컬렉션은 클라이언트에서 캐시라고 말한다.</li>
-<li>컬렉션을 캐시라고 부르는 이유는 데이터의 부분집합을 가지며 빠르게 접근할 수 있어서이다.</li>
-</ul>
-</li>
-</ul>
-
-
-        
-    </div>
-
-    <!-- Comments -->
-    
-
+        </span>
+        <span class="archive-title">
+            심볼(Symbol)
+        </span>
+    </a>
 </div>
+
+
+
+            
         </section>
-
     </div>
 </div>
+
+
+
+
+
+
+
 
 </div>
 
