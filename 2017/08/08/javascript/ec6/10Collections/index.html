@@ -15,9 +15,10 @@
 
 
 
-공진화* 공진화가 뭐여?
-* 다른 랭귀지들의 모듈 시스템을 가지고 오지 못했다.
-    * 이유는 ">
+공진화
+공진화가 뭐여?
+다른 랭귀지들의 모듈 시스템을 가지고 오지 못했다.
+이유는 브라우저 위에서 ">
     
 
     <!--Author-->
@@ -164,7 +165,7 @@
              -->
             
                 <span class="tags">
-                    <a href="/tags/Javascript/">Javascript</a> <a href="/tags/정리/">정리</a> <a href="/tags/ES6/">ES6</a> <a href="/tags/ECMAScript/">ECMAScript</a>
+                    <a href="/tags/Javascript/">Javascript</a> <a href="/tags/ES6/">ES6</a> <a href="/tags/ECMAScript/">ECMAScript</a> <a href="/tags/정리/">정리</a>
                 </span>
             
         </div>
@@ -194,118 +195,218 @@
 <p><br></p>
 <p><br></p>
 <hr>
-<h2 id="공진화"><a href="#공진화" class="headerlink" title="공진화"></a>공진화</h2><pre><code>* 공진화가 뭐여?
-* 다른 랭귀지들의 모듈 시스템을 가지고 오지 못했다.
-    * 이유는 브라우저 위에서 실행되기 때문에 다른 랭기쥐들과 다르기 때문...
-* ES6는 key를 갖는 컬렉션, Set, Map, WeakSet, WeakMap
-    * 해시 테이블과 비슷하지만 JS의 독특함 때문에 컬렉션을 구현하는 과정에서 흥미로운 선택을 해야 했다.
-* 이미 해시 테이블과 비슷한 것이 존제한다.
-    * Object
-        * key-value 쌍을 끊임 없이 추가할 수 있는 컬렉션이다....
-            * 근데 왜 컬렉션이라는 개념이 필요해진걸까?
-</code></pre><h2 id="컬렉션"><a href="#컬렉션" class="headerlink" title="컬렉션"></a>컬렉션</h2><pre><code>* Object로 해결할 수 없는 문제 
-    * 검색 테이블로 사용 중인 객체에 메소드를 추가하려면 이름 충돌의 위험을 감수해야 한다.
-        * 그래서 Object.create(null)을 사용해야함
-        * 또 빌트인 메소드를 멤버데이터로 혼돈하지 않도록 주의해야 함.
-    * 속성 key는 언제나 문자열이지만 속성 key로 객체를 사용할 수 없다.
-    * 객체에 얼마나 많은 속성이 존재하는지 알아낼 수 있는 효과적인 방법이 존재하지 않는다.
-    * Object에는 이터러블이 존재하지 않아 for-of문을 사용할 수 없다.
-    * 해시 테이블의 멤버 데이터는 소성과 ㄷㄹ리 프로퍼티 체인을 상속되지 않는다.
-        * 이로인한 장점이라면 Object와 달리 Map과 Set은 장롭게 메소드를 추가할 수 있다는 점이다.
-        * 이름 충돌 없이 객체에 메소드를 추가할 수 있다.
-* Set
-    * -란?
-        * Set은 value들로 이루어진 컬렉션이다.
-        * Set은 수정이 가능하다.
-        * 프로그램이 실행되는 동안 Set에 value를 추가하거나 삭제할 수 있다.
-    * 배열과의 차이점
-        * set에는 같은 value가 두번 포함 될 수 없다.
-        * Set에서는 JS의 모든 타입을 담을 수 있다.
-        * 문자열인 경우처럼 객체를 1번 이상 추가할 경우는 아무도 없다.
-        * 어떤 데이터가 자신의 멤버인지 확인하는 작업을 빨리 처리
-        * 인덱스 값으로 데이터를 조회할 수 없슴.
-    * 관련 작업 목록
-        * new Set
-            * 비어있는 새로운 set을 만듬
-        * new Set(iterable) 
-            * 새로운 set을 만들고 인자로 전달된 이터러블로 데이터를 채운다.
-        * set.size
-            * set안에 데이터의 개수를 조회한다.
-        * set.has(value)
-            * 주어진 값이 set안에 존제 할경우 true를 리턴한다.
-        * set.add(value)
-            * 주어진 값을 set에 추가한다. 이미 있으면 무시된다.
-        * set.dalete(value)
-            * set에서 주어진 값을 제거한다.
-        * set[Symbol.iterator]()
-            * set안의 값들을 순회할 수 있는 새로운 이터레이터를 리턴한다.
-            * 이 메서드를 직접 호출할 일은 없다.
-            * 하지만 이것때문에 set이 이터러블을 하여 for-of문에 사용할 수 있다
-        * set.forEach(f)
-            * ???
-        * set.clear()
-            * set안에 모든 데이터를 제거한다.
-        * set.keys(), set.values(), set.entries()
-            * 구문은 다양한 이터레이터들을 리턴합니다. 이 이터레이터들은 Map 과의 호환성을 위해 제공됩니다. 이에 대해서는 조금 뒤에 다시 다루겠습니다.
-    * 이중 가장 강력한건 new Set(iterable)이다.
-        * 이 구문은 모든 종류의 데이터 구조들 위에서 동작하기 때문이다.
-        * array를 set으로 변환하는 것도 가능하다.
-        * 제너레이터를 전달할 수도 있다.
-            * 제너레이터를 끝가지 실행시켜서 yield 된 값들을 set안에 저장할 것이다.
-        * 이미 존재하는 Set을 복제하는 방법이기도 하다.
-    * Set의 단점
-        * array에 이미 존재하는 함수형 헬퍼 구문들이 누락됬다.
-            * map(), filter(), some(), every()
-        * 내용이 변하지 않는 set1.union(set2) 구문과 set1.intersection(set2) 구문이 누락됬다.
-        * 많은 값들을 한꺼번에 처리하는 메소드들이 누락됬다. 
-            * set.addAll(iterable)
-            * set.removeAll(iterable)
-            * set.hasAll(iterable)
-        * ...??? 메소드들을 이용해서 이 모든 것들을 구현할수 있다 ㅁ...
-            * 뭔소리야..?
-* Map
-    * Map 컬렉션이란? 
-        * key-value 페어 (pair)로 이루어진 컬렉션
-    * 할수 있는 일
-        * new Map
-            * 새로운 map을 만든다
-        * new Map(pairs)
-            * 새로운 맵을 만들고 그 데이터를 기존의 [key, vlaue] 페어 컬렉션으로 채운다.
-                * Map 객체
-                * 2개의 엘리먼트를 가진 배열
-                * 2개의 엘리먼트를 yield하는 제너레이터
-        * map.size
-            * map에 담겨진 엘리먼터들의 개수를 조회
-        * map.has(key)
-            * 주어진 key가 존재하는지 확인
-        * map.get(key) 
-            * key와 연관된(associated) value를 리턴한다.
-        * map.set(key, value) 
-            * map에 key와 value 엔터리를 추가한다. 
-                * 같은 key값이 존제하면 덮어쓴다.
-        * map.delete(key)
-            * 엔트리를 삭제한다.
-        * map.clear() 
-            * 모든 엔트리를 제거한다.
-        * map[Symbol.iterator]() 
-            * 엔트리를 순회할 수 있는 이터레이터를 리턴한다.
-        * map.keys()
-            * map 안에 key 들을 순회할 수 잇는 이터레이터를 리턴한다.
-        * map.values()
-            * map 안에 value들을 순회할 수 있는 이터레이터를 리턴한다.
-        * map.entries() 
-            * map 안의 모든 엔트리들을 순회할 수 있는  이터레이터를 리턴한다.
-    * 포함되지 않은 기능들
-        * Python의 collections.defaultdict 처럼 디폴트 값을 부여하는 기능이 누락됐다.
-        * 오브젝트-리터럴 문법으로 map을 쉽게 정의할 수 있는 헬퍼 펑션이 누락됐다.
-    * 하지만 이 기능들도 쉽게 구현할 수 있다..????
-* JS 해시 테이블 순서 추적가능
-* 약한 컬렉션을 사용해야 하는 이유
-    * Map과 Set은 모리 릭(leak)을 만들 가능성이 높다.
-        * DOM 엘리먼트가 DOM 문서에서 제거되더라도 movingSet컬렉션에서 제거되지 않으면 가비지컬렉터가 메모리를 회수할 수 없다는 것을 의미
-    * 웹 페이지가 존재하는 동안 1개의 심볼만 사용하는 상황이라면 나쁘지 않습니다. 하지만 만약 짧은 시간 존재하는 심볼이 여러 개 필요한 상황이라면 그건 위험 신호입니다. 그럴 땐 메모리 릭을 피하는 방법으로 WeakMap 사용을 고려하자
-    * WeakSet 은 자신의 멤버 객체에 대한 레퍼런스를 보관하지 않는다.WeakSet 내부의 멤버 객체가 메모리로부터 제거되면, WeakSet 에서도 제거된다.WeakMap 도 비슷하다. WeakMap 은 자신의 멤버 key 들에 대한 레퍼런스를 보관하지 않는다. key 가 살아 있을 경우에만 관련 value 가 유지된다.
-</code></pre>
+<h2 id="공진화"><a href="#공진화" class="headerlink" title="공진화"></a>공진화</h2><ul>
+<li>공진화가 뭐여?</li>
+<li>다른 랭귀지들의 모듈 시스템을 가지고 오지 못했다.<ul>
+<li>이유는 브라우저 위에서 실행되기 때문에 다른 랭기쥐들과 다르기 때문…</li>
+</ul>
+</li>
+<li>ES6는 key를 갖는 컬렉션, Set, Map, WeakSet, WeakMap<ul>
+<li>해시 테이블과 비슷하지만 JS의 독특함 때문에 컬렉션을 구현하는 과정에서 흥미로운 선택을 해야 했다.</li>
+</ul>
+</li>
+<li>이미 해시 테이블과 비슷한 것이 존제한다.<ul>
+<li>Object<ul>
+<li>key-value 쌍을 끊임 없이 추가할 수 있는 컬렉션이다….<ul>
+<li>근데 왜 컬렉션이라는 개념이 필요해진걸까?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="컬렉션"><a href="#컬렉션" class="headerlink" title="컬렉션"></a>컬렉션</h2><ul>
+<li>Object로 해결할 수 없는 문제 <ul>
+<li>검색 테이블로 사용 중인 객체에 메소드를 추가하려면 이름 충돌의 위험을 감수해야 한다.<ul>
+<li>그래서 Object.create(null)을 사용해야함</li>
+<li>또 빌트인 메소드를 멤버데이터로 혼돈하지 않도록 주의해야 함.</li>
+</ul>
+</li>
+<li>속성 key는 언제나 문자열이지만 속성 key로 객체를 사용할 수 없다.</li>
+<li>객체에 얼마나 많은 속성이 존재하는지 알아낼 수 있는 효과적인 방법이 존재하지 않는다.</li>
+<li>Object에는 이터러블이 존재하지 않아 for-of문을 사용할 수 없다.</li>
+<li>해시 테이블의 멤버 데이터는 소성과 ㄷㄹ리 프로퍼티 체인을 상속되지 않는다.<ul>
+<li>이로인한 장점이라면 Object와 달리 Map과 Set은 장롭게 메소드를 추가할 수 있다는 점이다.</li>
+<li>이름 충돌 없이 객체에 메소드를 추가할 수 있다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Set<ul>
+<li>-란?<ul>
+<li>Set은 value들로 이루어진 컬렉션이다.</li>
+<li>Set은 수정이 가능하다.</li>
+<li>프로그램이 실행되는 동안 Set에 value를 추가하거나 삭제할 수 있다.</li>
+</ul>
+</li>
+<li>배열과의 차이점<ul>
+<li>set에는 같은 value가 두번 포함 될 수 없다.</li>
+<li>Set에서는 JS의 모든 타입을 담을 수 있다.</li>
+<li>문자열인 경우처럼 객체를 1번 이상 추가할 경우는 아무도 없다.</li>
+<li>어떤 데이터가 자신의 멤버인지 확인하는 작업을 빨리 처리</li>
+<li>인덱스 값으로 데이터를 조회할 수 없슴.</li>
+</ul>
+</li>
+<li>관련 작업 목록<ul>
+<li>new Set<ul>
+<li>비어있는 새로운 set을 만듬</li>
+</ul>
+</li>
+<li>new Set(iterable) <ul>
+<li>새로운 set을 만들고 인자로 전달된 이터러블로 데이터를 채운다.</li>
+</ul>
+</li>
+<li>set.size<ul>
+<li>set안에 데이터의 개수를 조회한다.</li>
+</ul>
+</li>
+<li>set.has(value)<ul>
+<li>주어진 값이 set안에 존제 할경우 true를 리턴한다.</li>
+</ul>
+</li>
+<li>set.add(value)<ul>
+<li>주어진 값을 set에 추가한다. 이미 있으면 무시된다.</li>
+</ul>
+</li>
+<li>set.dalete(value)<ul>
+<li>set에서 주어진 값을 제거한다.</li>
+</ul>
+</li>
+<li>set<a href="">Symbol.iterator</a><ul>
+<li>set안의 값들을 순회할 수 있는 새로운 이터레이터를 리턴한다.</li>
+<li>이 메서드를 직접 호출할 일은 없다.</li>
+<li>하지만 이것때문에 set이 이터러블을 하여 for-of문에 사용할 수 있다</li>
+</ul>
+</li>
+<li>set.forEach(f)<ul>
+<li>???</li>
+</ul>
+</li>
+<li>set.clear()<ul>
+<li>set안에 모든 데이터를 제거한다.</li>
+</ul>
+</li>
+<li>set.keys(), set.values(), set.entries()<ul>
+<li>구문은 다양한 이터레이터들을 리턴합니다. 이 이터레이터들은 Map 과의 호환성을 위해 제공됩니다. 이에 대해서는 조금 뒤에 다시 다루겠습니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>이중 가장 강력한건 new Set(iterable)이다.<ul>
+<li>이 구문은 모든 종류의 데이터 구조들 위에서 동작하기 때문이다.</li>
+<li>array를 set으로 변환하는 것도 가능하다.</li>
+<li>제너레이터를 전달할 수도 있다.<ul>
+<li>제너레이터를 끝가지 실행시켜서 yield 된 값들을 set안에 저장할 것이다.</li>
+</ul>
+</li>
+<li>이미 존재하는 Set을 복제하는 방법이기도 하다.</li>
+</ul>
+</li>
+<li>Set의 단점<ul>
+<li>array에 이미 존재하는 함수형 헬퍼 구문들이 누락됬다.<ul>
+<li>map(), filter(), some(), every()</li>
+</ul>
+</li>
+<li>내용이 변하지 않는 set1.union(set2) 구문과 set1.intersection(set2) 구문이 누락됬다.</li>
+<li>많은 값들을 한꺼번에 처리하는 메소드들이 누락됬다. <ul>
+<li>set.addAll(iterable)</li>
+<li>set.removeAll(iterable)</li>
+<li>set.hasAll(iterable)</li>
+</ul>
+</li>
+<li>…??? 메소드들을 이용해서 이 모든 것들을 구현할수 있다 ㅁ…<ul>
+<li>뭔소리야..?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Map<ul>
+<li>Map 컬렉션이란? <ul>
+<li>key-value 페어 (pair)로 이루어진 컬렉션</li>
+</ul>
+</li>
+<li>할수 있는 일<ul>
+<li>new Map<ul>
+<li>새로운 map을 만든다</li>
+</ul>
+</li>
+<li>new Map(pairs)<ul>
+<li>새로운 맵을 만들고 그 데이터를 기존의 [key, vlaue] 페어 컬렉션으로 채운다.<ul>
+<li>Map 객체</li>
+<li>2개의 엘리먼트를 가진 배열</li>
+<li>2개의 엘리먼트를 yield하는 제너레이터</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>map.size<ul>
+<li>map에 담겨진 엘리먼터들의 개수를 조회</li>
+</ul>
+</li>
+<li>map.has(key)<ul>
+<li>주어진 key가 존재하는지 확인</li>
+</ul>
+</li>
+<li>map.get(key) <ul>
+<li>key와 연관된(associated) value를 리턴한다.</li>
+</ul>
+</li>
+<li>map.set(key, value) <ul>
+<li>map에 key와 value 엔터리를 추가한다. <ul>
+<li>같은 key값이 존제하면 덮어쓴다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>map.delete(key)<ul>
+<li>엔트리를 삭제한다.</li>
+</ul>
+</li>
+<li>map.clear() <ul>
+<li>모든 엔트리를 제거한다.</li>
+</ul>
+</li>
+<li>map<a href="">Symbol.iterator</a> <ul>
+<li>엔트리를 순회할 수 있는 이터레이터를 리턴한다.</li>
+</ul>
+</li>
+<li>map.keys()<ul>
+<li>map 안에 key 들을 순회할 수 잇는 이터레이터를 리턴한다.</li>
+</ul>
+</li>
+<li>map.values()<ul>
+<li>map 안에 value들을 순회할 수 있는 이터레이터를 리턴한다.</li>
+</ul>
+</li>
+<li>map.entries() <ul>
+<li>map 안의 모든 엔트리들을 순회할 수 있는  이터레이터를 리턴한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>포함되지 않은 기능들<ul>
+<li>Python의 collections.defaultdict 처럼 디폴트 값을 부여하는 기능이 누락됐다.</li>
+<li>오브젝트-리터럴 문법으로 map을 쉽게 정의할 수 있는 헬퍼 펑션이 누락됐다.</li>
+</ul>
+</li>
+<li>하지만 이 기능들도 쉽게 구현할 수 있다..????</li>
+</ul>
+</li>
+<li>JS 해시 테이블 순서 추적가능</li>
+<li>약한 컬렉션을 사용해야 하는 이유<ul>
+<li>Map과 Set은 모리 릭(leak)을 만들 가능성이 높다.<ul>
+<li>DOM 엘리먼트가 DOM 문서에서 제거되더라도 movingSet컬렉션에서 제거되지 않으면 가비지컬렉터가 메모리를 회수할 수 없다는 것을 의미</li>
+</ul>
+</li>
+<li>웹 페이지가 존재하는 동안 1개의 심볼만 사용하는 상황이라면 나쁘지 않습니다. 하지만 만약 짧은 시간 존재하는 심볼이 여러 개 필요한 상황이라면 그건 위험 신호입니다. 그럴 땐 메모리 릭을 피하는 방법으로 WeakMap 사용을 고려하자</li>
+<li>WeakSet 은 자신의 멤버 객체에 대한 레퍼런스를 보관하지 않는다.WeakSet 내부의 멤버 객체가 메모리로부터 제거되면, WeakSet 에서도 제거된다.WeakMap 도 비슷하다. WeakMap 은 자신의 멤버 key 들에 대한 레퍼런스를 보관하지 않는다. key 가 살아 있을 경우에만 관련 value 가 유지된다.</li>
+</ul>
+</li>
+</ul>
+
 
         
     </div>
