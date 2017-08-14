@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="hacks 웹 기술블로그에 작성된 내용을 정리한 포스트입니다.http://hacks.mozilla.or.kr/2016/02/es6-in-depth-generators-continued/
+
+
+
+
+제너레이터
+동작
+동기적(synchronous)으로 싱글쓰레드 환경에서 실행된">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="tahooki">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="제너레이터 이어서(generator)"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Web Developer"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>제너레이터 이어서(generator) - Web Developer</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/posts">
+                    Posts
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">Web Developer</h1>
+        
+        
+            <h1 id="main-subtitle" class="subtitle">Tahooki</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+
+
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <span>
+                
+                    [ ES6 ]
+                
+                제너레이터 이어서(generator)</span>
+        </h1>
+        <div class="post-info">
+            <!-- 
+                <span class="date">2017-08-09</span>
+             -->
+            
+                <span class="tags">
+                    <a href="/tags/Javascript/">Javascript</a> <a href="/tags/정리/">정리</a> <a href="/tags/ES6/">ES6</a> <a href="/tags/ECMAScript/">ECMAScript</a>
+                </span>
+            
+        </div>
+    </div>
+    <!-- 해당 내용이 있으면 아래꺼를 만든다.. 라는 식 -->
+
+
+
+    <div class="content">
+        
+        
+        
+
+        
+
+        
+
+        <!-- Gallery -->
+        
+
+        <br/><br/><br/>
+        <!-- Post Content -->
+        <div class="text-center"><br><img src="/img/hacks.png" alt=""><br></div>
+
+<div class="text-center"><br>hacks 웹 기술블로그에 작성된 내용을 정리한 포스트입니다.<br><a href="http://hacks.mozilla.or.kr/2016/02/es6-in-depth-generators-continued/" target="_blank" rel="external">http://hacks.mozilla.or.kr/2016/02/es6-in-depth-generators-continued/</a><br></div>
+
+<p><br></p>
+<p><br></p>
+<hr>
+<h2 id="제너레이터"><a href="#제너레이터" class="headerlink" title="제너레이터"></a>제너레이터</h2><ul>
+<li>동작<ul>
+<li>동기적(synchronous)으로 싱글쓰레드 환경에서 실행된다.</li>
+</ul>
+</li>
+<li>종료방식<ul>
+<li>generator.return()</li>
+<li>generator.next()</li>
+<li>generator.throw(error)</li>
+<li>yield*</li>
+<li>try 안에서 예외가 발생하면 cleanup()이 실행될까?<ul>
+<li>-된다.</li>
+<li>myGenerator.return() 가 호출되면 제너레이터는 finally 블럭의 코드를 실행하고 종료<ul>
+<li>.return() 코드가 랭귀지에 의해 항상 호출 되는 것이 아니다<ul>
+<li>오직 이터레이터 프로토콜을 사용하는 경우에만 호출된다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>주도권</p>
+<ul>
+<li>콜러 주도 방식<ul>
+<li><img src="2017-08-09-13-09-24.png" alt=""></li>
+</ul>
+</li>
+<li><p>비동기 방식</p>
+<ul>
+<li>.next(‘인자 전달가능’)</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">handle</span>(<span class="params">request</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> results = <span class="keyword">yield</span> getDataAndLatte(request.areaCode);</div><div class="line">    results.coffee.drink();</div><div class="line">    <span class="keyword">var</span> target = mostUrgentRecord(results.data);</div><div class="line">    <span class="keyword">yield</span> updateStatus(target.id, <span class="string">"ready"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>yield getDataAndLatte(request.areaCode);</p>
+<ul>
+<li>파일 입출력이나 데이터 전송같은 경우에 확실한 처리가 가능하다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>제너레이터 여러개를 한꺼번에 사용하기<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">concat</span>(<span class="params">iter1, iter2</span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> value <span class="keyword">of</span> iter1) &#123;</div><div class="line">        <span class="keyword">yield</span> value;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> value <span class="keyword">of</span> iter2) &#123;</div><div class="line">        <span class="keyword">yield</span> value;</div><div class="line">    &#125;</div><div class="line">&#125;    </div><div class="line">    </div></pre></td></tr></table></figure>
+<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">        </div><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">concat</span>(<span class="params">iter1, iter2</span>) </span>&#123;</div><div class="line">  <span class="keyword">yield</span>* iter1;</div><div class="line">  <span class="keyword">yield</span>* iter2;</div><div class="line">&#125;</div><div class="line">        </div></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">factoredOutChunkOfCode</span>(<span class="params"></span>) </span>&#123; ... &#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">refactoredFunction</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  ...</div><div class="line">  yield* factoredOutChunkOfCode();</div><div class="line">  ...</div><div class="line">&#125;</div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+
+        
+    </div>
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer-about">
+                <h2>About</h2>
+                <p>
+                    This blog is GitBlog made from <a href="https://hexo.io/">Hexo</a>.<br/> This theme was developed by <a href="https://github.com/klugjo">Jonathan Klughertz</a>. <br/><br/>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/tahooki">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:tahooki@naver.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Web Developer Tahooki.
+                    <div>
+                        <span id="busuanzi_container_site_pv">
+                            Total <span id="busuanzi_value_site_pv"></span> views,
+                        </span>
+                        <span id="busuanzi_container_site_uv">
+                          <span id="busuanzi_value_site_uv"></span> visitors
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Total visitor count-->
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
