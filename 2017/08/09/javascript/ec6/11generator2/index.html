@@ -164,7 +164,7 @@
              -->
             
                 <span class="tags">
-                    <a href="/tags/Javascript/">Javascript</a> <a href="/tags/정리/">정리</a> <a href="/tags/ES6/">ES6</a> <a href="/tags/ECMAScript/">ECMAScript</a>
+                    <a href="/tags/Javascript/">Javascript</a> <a href="/tags/ES6/">ES6</a> <a href="/tags/ECMAScript/">ECMAScript</a> <a href="/tags/정리/">정리</a>
                 </span>
             
         </div>
@@ -217,19 +217,15 @@
 </li>
 </ul>
 </li>
-<li><p>주도권</p>
-<ul>
+<li>주도권<ul>
 <li>콜러 주도 방식<ul>
-<li><img src="2017-08-09-13-09-24.png" alt=""></li>
+<li><img src="./2017-08-09-13-09-24.png" alt=""></li>
 </ul>
 </li>
-<li><p>비동기 방식</p>
-<ul>
+<li>비동기 방식<ul>
 <li>.next(‘인자 전달가능’)</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">handle</span>(<span class="params">request</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> results = <span class="keyword">yield</span> getDataAndLatte(request.areaCode);</div><div class="line">    results.coffee.drink();</div><div class="line">    <span class="keyword">var</span> target = mostUrgentRecord(results.data);</div><div class="line">    <span class="keyword">yield</span> updateStatus(target.id, <span class="string">"ready"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>yield getDataAndLatte(request.areaCode);</p>
-<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">handle</span>(<span class="params">request</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> results = <span class="keyword">yield</span> getDataAndLatte(request.areaCode);</div><div class="line">    results.coffee.drink();</div><div class="line">    <span class="keyword">var</span> target = mostUrgentRecord(results.data);</div><div class="line">    <span class="keyword">yield</span> updateStatus(target.id, <span class="string">"ready"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+<li>yield getDataAndLatte(request.areaCode);<ul>
 <li>파일 입출력이나 데이터 전송같은 경우에 확실한 처리가 가능하다.</li>
 </ul>
 </li>
